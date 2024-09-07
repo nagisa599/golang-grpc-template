@@ -9,7 +9,10 @@ service TodoService {
     // Defines a method to create a todo item
     rpc CreateTodo (CreateTodoRequest) returns (CreateTodoResponse);
 }
-
+enum Status {
+    SUCCESS = 0;  // 成功
+    FAILURE = 1;  // 失敗
+}
 // Response message for getting a todo item
 message GetTodoResponse {
     int32 id = 1;
@@ -24,9 +27,7 @@ message GetTodoRequest {
 
 // Response message for creating a todo item
 message CreateTodoResponse {
-    int32 id = 1;
-    string title = 2;
-    string description = 3;
+    Status status = 1;       
 }
 
 // Request message for creating a todo item

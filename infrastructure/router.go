@@ -7,7 +7,9 @@ import (
 	"os"
 
 	todov1 "github.com/nagisa599/golang-grpc-template/gen/go/v1/todo"
+	"github.com/nagisa599/golang-grpc-template/internal/domain/repository"
 	"github.com/nagisa599/golang-grpc-template/internal/handler"
+	"github.com/nagisa599/golang-grpc-template/internal/usecase"
 	"google.golang.org/grpc"
 )
 
@@ -24,7 +26,7 @@ func Router() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	
-	todoHandler := handler.NewTodoHandler()
+	todoHandler := handler.NewTodoHandler(usecase.NewTodoUsecase(repository.NewTodoRepository(databaseHandler)))
 	srv := grpc.NewServer()
 	todov1.RegisterTodoServiceServer(srv, todoHandler)
 		// ログを出力するmiddlewareを実行
