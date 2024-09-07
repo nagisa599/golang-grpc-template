@@ -1,27 +1,21 @@
-# golang-grpc-template
+# go-graphql-template
 
-これは golang で grpc サーバを clena で実装しています。
+This is a template when you want to implement a gRPC server in go on
+clean architecture.
 
-# 目的
+# stack
 
-Grpc をクリーンアーキテクチャで利用するための Template を作成
+| Technology                     | Libraries and tools used |
+| ------------------------------ | ------------------------ |
+| Language                       | go1.22.45                |
+| Local environment construction | Docker                   |
+| ORM                            |
+| Migration                      | Goose                    |
+| Seeds                          | Self-implementation      |
+| Schema                         | Graph QL                 |
 
-# 使用言語
+## index
 
-- go
-- proto
-
-# フレームワーク,利用技術
-
-- gRPC (https://pkg.go.dev/google.golang.org/grpc)
-- buf
-
-# 開発手順
-
-### package のインストール
-
-buf のインストール
-
-```bash
-brew install bufbuild/buf/buf
-```
+- 🌳[set up on local](./docs/setUp.md)
+- 🍏[Database update](./docs/migration.md)
+- 📗[Directory structure](./docs/strucure.md)
