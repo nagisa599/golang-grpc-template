@@ -19,3 +19,4 @@ clean architecture.
 - 🌳[set up on local](./docs/setUp.md)
 - 🍏[Database update](./docs/migration.md)
 - 📗[Directory structure](./docs/strucure.md)
+- 🍓[grpc proto](./docs/proto.md)
