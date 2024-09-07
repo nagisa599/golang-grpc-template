@@ -12,7 +12,7 @@ import (
 )
 
 func Router() {
-	// databaseHandler := NewDatabaseHandler()
+	databaseHandler := NewDatabaseHandler()
 	port := os.Getenv("PORT")
 	if port == "" {
 		log.Fatal("PORT environment variable not set.")
