@@ -25,4 +25,4 @@ services:
       db: # dbが起動してからbackendを起動
         condition: service_healthy
     ports:
-      - 6000:6000
+      - 3001:3001

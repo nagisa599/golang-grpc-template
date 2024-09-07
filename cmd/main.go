@@ -1,12 +1,12 @@
 package main
 
-// import (
-// 	"github.com/nagisa599/go-graphql-template/infrastructure"
-// )
+import "github.com/nagisa599/golang-grpc-template/infrastructure"
+
+
 
 func main() {
-	// infrastructure.Router()
-	print("Hello Worldf")
+	infrastructure.Router()
+	
 }
 
 
