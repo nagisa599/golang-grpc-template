@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package proto.todo.v1;
+
+// Defines the Todo service
+service TodoService {
+    // Defines a method to get a todo item
+    rpc GetTodo (GetTodoRequest) returns (GetTodoResponse); 
+    // Defines a method to create a todo item
+    rpc CreateTodo (CreateTodoRequest) returns (CreateTodoResponse);
+}
+
+// Response message for getting a todo item
+message GetTodoResponse {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+}
+
+// Request message for getting a todo item
+message GetTodoRequest {
+    int32 id = 1;
+}
+
+// Response message for creating a todo item
+message CreateTodoResponse {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+}
+
+// Request message for creating a todo item
+message CreateTodoRequest {
+    string title = 1;
+    string description = 2;
+}

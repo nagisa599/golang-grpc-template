@@ -1,0 +1,21 @@
+version: v1
+# マネージドモードを有効
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/JY8752/buf-demo/example/gen # デフォルトのpackage名を指定。これは必須
+plugins:
+  # protoc-gen-goプラグイン
+  # - plugin: go
+  #   out: gen/go
+  #   opt: paths=source_relative
+  # リモートプラグインを使用
+  - plugin: buf.build/protocolbuffers/go:v1.31.0
+    out: gen/go
+    # GoのモジュールパスがProtobufファイルから相対的に解決されるよう指定
+    # なくてもいいがないと上で指定したdefaultのフルパスが使われる
+    opt: paths=source_relative
+  # protoc-gen-go-grpcプラグイン
+  - plugin: buf.build/grpc/go:v1.3.0
+    out: gen/go
+    opt: paths=source_relative

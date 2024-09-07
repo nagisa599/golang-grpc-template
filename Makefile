@@ -12,3 +12,6 @@ inBackend:
 
 InDb: 
 	docker exec -it mysql-db bash
+
+genBuf: 
+	buf generate proto
