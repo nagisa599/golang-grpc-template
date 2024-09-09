@@ -1,4 +1,4 @@
-# go-graphql-template
+# go-gRPC-template
 
 This is a template when you want to implement a gRPC server in go on
 clean architecture.
